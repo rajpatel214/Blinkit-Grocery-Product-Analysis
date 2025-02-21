@@ -25,38 +25,38 @@ The dataset used in this case study consists of a table named `Grocery Sales`, w
 The SQL queries in this project are designed to extract meaningful insights from the dataset. Below is a summary of the queries and the techniques used:
 
 ### Data Exploration Queries:
-1. **Retrieve all records**: `SELECT * FROM blinkit_online;`
-2. **Get distinct items and types**: `SELECT DISTINCT item_identifier, item_type FROM blinkit_online;`
-3. **Count total items**: `SELECT COUNT(item_identifier) AS total_Item_Identifier FROM blinkit_online;`
+1. **Retrieve all records**: SELECT * FROM blinkit_online;
+2. **Get distinct items and types**: SELECT DISTINCT item_identifier, item_type FROM blinkit_online;
+3. **Count total items**: SELECT COUNT(item_identifier) AS total_Item_Identifier FROM blinkit_online;
 
 ### Statistical Analysis Queries:
-4. **Find maximum item weight**: `SELECT MAX(item_weight) AS max_item_weight FROM blinkit_online;`
-5. **Find minimum item weight**: `SELECT MIN(item_weight) FROM blinkit_online;`
-6. **Find average item weight**: `SELECT AVG(item_weight) FROM blinkit_online;`
+4. **Find maximum item weight**: SELECT MAX(item_weight) AS max_item_weight FROM blinkit_online;
+5. **Find minimum item weight**: SELECT MIN(item_weight) FROM blinkit_online;
+6. **Find average item weight**: SELECT AVG(item_weight) FROM blinkit_online;
 
 ### Filtering and Grouping Queries:
-7. **Count low-fat items**: `SELECT COUNT(*) AS count_item_fat FROM blinkit_online WHERE item_fat_content='Low Fat';`
-8. **Count regular-fat items**: `SELECT COUNT(*) AS count_item_fat FROM blinkit_online WHERE item_fat_content='Regular';`
-9. **Find maximum MRP**: `SELECT MAX(item_mrp) AS max_mrp FROM blinkit_online;`
-10. **Find minimum MRP**: `SELECT MIN(item_mrp) AS min_mrp FROM blinkit_online;`
-11. **Filter products by MRP > 200**: `SELECT * FROM blinkit_online WHERE item_mrp > 200;`
+7. **Count low-fat items**: SELECT COUNT(*) AS count_item_fat FROM blinkit_online WHERE item_fat_content='Low Fat';
+8. **Count regular-fat items**: SELECT COUNT(*) AS count_item_fat FROM blinkit_online WHERE item_fat_content='Regular';
+9. **Find maximum MRP**: SELECT MAX(item_mrp) AS max_mrp FROM blinkit_online;
+10. **Find minimum MRP**: SELECT MIN(item_mrp) AS min_mrp FROM blinkit_online;
+11. **Filter products by MRP > 200**: SELECT * FROM blinkit_online WHERE item_mrp > 200;
 
 ### Sorting and Aggregation Queries:
-12. **Find maximum MRP per item type**: `SELECT MAX(item_mrp), item_type FROM blinkit_online GROUP BY item_type ORDER BY MAX(item_mrp) DESC;`
-13. **Find average MRP per outlet size**: `SELECT AVG(item_mrp), outlet_size FROM blinkit_online GROUP BY outlet_size ORDER BY AVG(item_mrp) DESC;`
-14. **Sort data in descending order by sales**: `SELECT * FROM blinkit_online ORDER BY item_outlet_sales DESC;`
-15. **Sort data in ascending order by type**: `SELECT * FROM blinkit_online ORDER BY item_type ASC;`
+12. **Find maximum MRP per item type**: SELECT MAX(item_mrp), item_type FROM blinkit_online GROUP BY item_type ORDER BY MAX(item_mrp) DESC;
+13. **Find average MRP per outlet size**: SELECT AVG(item_mrp), outlet_size FROM blinkit_online GROUP BY outlet_size ORDER BY AVG(item_mrp) DESC;
+14. **Sort data in descending order by sales**: SELECT * FROM blinkit_online ORDER BY item_outlet_sales DESC;
+15. **Sort data in ascending order by type**: SELECT * FROM blinkit_online ORDER BY item_type ASC;
 
 ### Advanced Analytical Queries:
-16. **Find count of items by outlet type**: `SELECT COUNT(outlet_type) AS count_outlet_type, outlet_type FROM blinkit_online GROUP BY outlet_type ORDER BY COUNT(outlet_type) DESC;`
-17. **Find maximum item sales per establishment year**: `SELECT MAX(item_outlet_sales), outlet_establishment_year FROM blinkit_online GROUP BY outlet_establishment_year ORDER BY MAX(item_outlet_sales) DESC;`
-18. **Find minimum MRP per outlet establishment year**: `SELECT MIN(item_mrp), outlet_establishment_year FROM blinkit_online GROUP BY outlet_establishment_year ORDER BY MIN(item_mrp) DESC;`
-19. **Find average item weight per location type**: `SELECT AVG(item_weight), outlet_location_type FROM blinkit_online GROUP BY outlet_location_type ORDER BY AVG(item_weight) DESC;`
+16. **Find count of items by outlet type**: SELECT COUNT(outlet_type) AS count_outlet_type, outlet_type FROM blinkit_online GROUP BY outlet_type ORDER BY COUNT(outlet_type) DESC;
+17. **Find maximum item sales per establishment year**: SELECT MAX(item_outlet_sales), outlet_establishment_year FROM blinkit_online GROUP BY outlet_establishment_year ORDER BY MAX(item_outlet_sales) DESC;
+18. **Find minimum MRP per outlet establishment year**: SELECT MIN(item_mrp), outlet_establishment_year FROM blinkit_online GROUP BY outlet_establishment_year ORDER BY MIN(item_mrp) DESC;
+19. **Find average item weight per location type**: SELECT AVG(item_weight), outlet_location_type FROM blinkit_online GROUP BY outlet_location_type ORDER BY AVG(item_weight) DESC;
 
 ## SQL Techniques Used
 - **Basic SELECT Queries**: Extracting data from the dataset.
 - **DISTINCT Clause**: Fetching unique values from columns.
-- **Aggregate Functions** (`COUNT`, `AVG`, `MAX`, `MIN`): Performing summary statistics on the dataset.
+- **Aggregate Functions** (COUNT, AVG, MAX, MIN): Performing summary statistics on the dataset.
 - **GROUP BY**: Grouping data based on specific columns to obtain aggregated results.
 - **HAVING Clause**: Filtering aggregated results based on conditions.
 - **ORDER BY**: Sorting query results in ascending or descending order.
